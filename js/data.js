@@ -5,7 +5,7 @@
 //开始读取文件模版 js
 var zbTableModel ;
 $.ajax({
-    url: '/models/table.zbTable.rb',
+    url: 'models/table.zbTable.rb',
     cache: false,
     async: false,
     success: function(f) {
