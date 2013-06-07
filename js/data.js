@@ -28,7 +28,7 @@ var tableDataDefalts = {
 //修改表格列数
 function changeColumnNum(sender){
 	var me = $(sender);
-	var value = me.val();
+	var value =$.trim(me.val());
 	
 	//获取modalid，对应tableid
 	var modalId = me.parents('.modal').first().attr('id');
@@ -38,14 +38,16 @@ function changeColumnNum(sender){
 	//如果该表格对象不存在
 	if(!grobalTableDataJson[jsonId]){
 		
+		var json = {}
 		//新建对象
-		var json = {
+		$.extend(json,{
 			type : 'zbtable',
 			id : tId,
 			columnNum: 0,
 			rowNum: 0,
 			columnValue: []
-		}
+		});
+		
 		grobalTableDataJson[jsonId] = json;
 	}
 	
@@ -80,7 +82,7 @@ function setzbTableValue(sender){
 	
 	t.columnValue[sort] = me.html();
 	
-	console.log(t);
+	//console.log(t.columnValue);
 }
 
 //修改指标表格
@@ -109,12 +111,33 @@ function getCompileJson(tId){
 	var json = {
 		column : []
 	};
+	
 	for(var i = 0 ; i < t.columnNum ; i++){
 		var column = t.columnValue[i];
 		if(!column) column = '';
+		
+		//sort：当前列的索引
 		var j = {name: column ,sort: i};
 		json.column.push(j);
 	}
 	
 	return json;
+}
+
+//删除表格
+function removeTableData(sender){
+	var me = $(sender);
+	var tableId = me.parent().find('.tableContent').attr('id');
+	
+	if(tableId){
+		var tId = tableId.split('-')[0];
+		var jsonId = 'zbtable-' + tId;
+		
+		if(grobalTableDataJson[jsonId]) delete grobalTableDataJson[jsonId];
+	}
+}
+
+//保存表格
+function saveTable(){
+	
 }

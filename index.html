@@ -162,10 +162,19 @@
 	$('.demo').delegate('.remove','click',function(event) {
 		event.preventDefault();
 		$(this).parent().remove();
+		
+		//删除data的json数据
+		removeData(this);
+		
 		if(!$('.demo .lyrow').length > 0) { 
 			clearDemo();
 		}
 	});
+	
+	//删除数据
+	function removeData(sender){
+		removeTableData(sender);
+	}
 	
 	//清空demo
 	function clearDemo() {
