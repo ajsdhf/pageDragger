@@ -11,6 +11,9 @@ body {
 body.edit{
 	margin-left: 200px;
 }
+.hidden{
+	display: none;
+}
 .wrapper{
 	border: 1px solid #ddd !important;
 	border-radius: 4px 4px 4px 4px;
@@ -163,11 +166,15 @@ body.edit{
 	position: absolute;
 	top: 30px;
 }
+.edit .demo .inline-alert.alert{
+	padding: 5px 35px 6px 14px;
+	display: none;
+}
 .datepickerContent{
 	text-align: right;
 }
 .edit .demo .tab-pane{
-	min-height: 150px;
+	min-height: 100px;
 }
 .demo .configuration select{
 	max-width: 85px;
