@@ -54,6 +54,12 @@ var configurationJson = {
 		name: '紧凑',
 		value: 'table-condensed'
 	},
+	tabSetting:{
+		isModal: 1,
+		href: 'modal-container-tab',
+		name: '设置',
+		content: ''
+	},
 	tableData:{						//设置表格数据
 		isModal: 1,
 		href: 'modal-container-table',

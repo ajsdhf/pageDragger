@@ -9,7 +9,8 @@ var pluginList = {
 		list: [] ,
 		fileList:[
 			'grid.1.handlebars',
-			'grid.2.handlebars','grid.tab.handlebars'
+			'grid.2.handlebars',
+			'grid.tab.handlebars'
 		]
 	},
 	text: {

@@ -54,7 +54,7 @@ function changeColumnNum(sender){
 	var t = grobalTableDataJson[jsonId];
 		
 	if(!/^[0-9]*$/.test(value)){
-		me.next().html('请输入文字').show();
+		me.next().html('请输入数字').show();
 	}
 	else{
 		if(value > tableDataDefalts.columnNumMax) {
