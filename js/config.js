@@ -10,6 +10,7 @@ var pluginList = {
 		fileList:[
 			'grid.1.handlebars',
 			'grid.2.handlebars',
+			'grid.wrapper.handlebars',
 			'grid.tab.handlebars'
 		]
 	},

@@ -17,6 +17,27 @@ body.edit{
 .wrapper{
 	border: 1px solid #ddd !important;
 	border-radius: 4px 4px 4px 4px;
+	padding: 5px 10px;
+}
+.edit .wrapper{
+	min-height: 100px;
+	padding-top: 30px;
+	
+}
+.edit .wrapper:after {
+	background-color: #F5F5F5;
+	border: 1px solid #DDDDDD;
+	border-radius: 4px 0 4px 0;
+	color: #9DA0A4;
+	content: "wrapper";
+	font-size: 12px;
+	font-weight: bold;
+	left: 0px;
+	padding: 3px 7px;
+	position: absolute;
+	top: 0px;
+	height: 20px;
+	line-height: 20px;
 }
 .navbar .btn-donate {padding: 0 0 0 10px;}	
 .navbar .btn-donate form { margin:0;}

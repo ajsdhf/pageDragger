@@ -135,7 +135,7 @@
 			ui.helper.width(400);
 		},
 		stop: function( event, ui ) {
-			$('.demo .column').sortable({ 
+			$('.demo .column,.demo .wrapper').sortable({ 
 				opacity : 0.35,
 				connectWith: '.column'
 			});
@@ -144,7 +144,7 @@
 	
 	/* drag and drop boxes */
 	$( ".sidebar-nav .box" ).draggable({
-		connectToSortable: ".column , .tab-pane",
+		connectToSortable: ".column , .tab-pane ,.wrapper",
 		helper: "clone",
 		handle: ".drag",
 		drag: function(event, ui) {

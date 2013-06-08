@@ -1,6 +1,6 @@
 var configurationJson = {
 	wrapperBorderBtn: {				//容器边框
-		isButton: 1,
+		isButton: 0,
 		name: '边框',
 		value: 'wrapper'
 	},
