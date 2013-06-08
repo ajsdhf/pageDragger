@@ -120,7 +120,7 @@
 <script src="js/handle.js"></script>
 <script >
 	/* sortables */
-	$( ".demo, .demo .column" ).sortable({
+	$( ".demo, .demo .column ,.demo .wrapper" ).sortable({
 		connectWith: '.column',
 		opacity : 0.35,
 		handle: ".drag"
@@ -128,7 +128,7 @@
 	
 	/* drag and drop rows */
 	$( ".sidebar-nav .lyrow" ).draggable({
-		connectToSortable: ".demo",
+		connectToSortable: ".demo,.demo .wrapper",
 		helper: "clone",
 		handle: ".drag",
 		drag: function(event, ui) {
@@ -137,7 +137,7 @@
 		stop: function( event, ui ) {
 			$('.demo .column,.demo .wrapper').sortable({ 
 				opacity : 0.35,
-				connectWith: '.column'
+				connectWith: '.column,.wrapper, .tab-pane'
 			});
 		}
 	});
