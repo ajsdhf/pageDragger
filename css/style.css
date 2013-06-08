@@ -138,8 +138,8 @@ body.edit{
 .box,.lyrow { position:relative;margin-top: 4px;}
 
 .edit .demo .lyrow .drag { top:5px; right:80px; z-index:10; }
-.edit .demo .column .box .drag { top:5px; }
-.edit .demo .column .box .configuration {position: absolute; top: 3px; right: 140px;white-space:nowrap; }
+.edit .demo .column .box .drag,.edit .demo .wrapper .box .configuration{ top:5px; }
+.edit .demo .column .box .configuration,.edit .demo .wrapper .box .configuration {position: absolute; top: 3px; right: 140px;white-space:nowrap; }
 .edit .demo .remove { position: absolute; top: 5px; right: 5px; z-index:10; }
 .demo .configuration {
 	filter: alpha(opacity=0);
@@ -194,6 +194,15 @@ body.edit{
 }
 .datepickerContent{
 	text-align: right;
+}
+.datepickerContent .btn-group{
+	display: none;
+}
+.datepickerContent .btn-group.show{
+	display: inline-block;
+	position: relative;
+	top: -5px;
+	margin-right: 20px;
 }
 .edit .demo .tab-pane{
 	min-height: 100px;

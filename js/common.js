@@ -54,7 +54,12 @@ var configurationJson = {
 		name: '紧凑',
 		value: 'table-condensed'
 	},
-	tabSetting:{
+	datetypeBtn:{					//添加时间类型选择
+		isButton: 1,
+		name: '日期类型',
+		value: 'show'
+	},
+	tabSetting:{					//设置tab页数
 		isModal: 1,
 		href: 'modal-container-tab',
 		name: '设置',
