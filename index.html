@@ -65,7 +65,7 @@
 						</li>
 				       <li class="rows" >
 					       {{#each list}}
-					       	<div class="{{className}}">
+					       	<div class="{{className}}" name = {{pathname}}>
 								<a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>remove</a>
 								<span class="configuration">
 									{{#each configuration}}
@@ -93,7 +93,12 @@
 									{{#if isInput}}
 								        <input type="text" bindAttr value="{{previewValue}}" />
 								    {{else}}
-								    	{{previewValue}}
+								    	{{{previewValue}}}
+								    	
+								    	{{#if limitNum}}
+								    	<span total = '{{limitNum}}' class='badge J-limitNum'>{{limitNum}}</span>
+								    	{{/if}}
+								    	
 								    {{/if}}
 								</div>
 								<span class="drag label"><i class="icon-move"></i>drag</span>
@@ -152,6 +157,8 @@
 		},
 		stop: function() {
 			handleJsIds();
+			handleBadge();
+			
 			$('.demo .tab-pane').sortable({ 
 				opacity : 0.35,
 				connectWith: '.box'
@@ -170,6 +177,9 @@
 		if(!$('.demo .lyrow').length > 0) { 
 			clearDemo();
 		}
+		
+		//处理次数限制
+		handleBadge();
 	});
 	
 	//删除数据
@@ -274,6 +284,35 @@
 		$('.demo '+href).attr('id', containerId);
 		
 		elm.removeClass('toBechange');
+	}
+	
+	//处理次数限制
+	function handleBadge(){
+		$('.accordion-group .J-limitNum').each(function(){
+			var total = $(this).attr('total');
+			$(this).html(total);
+			$(this).parent().next().show();
+		})
+	
+		$('.demo .box-element').each(function(){
+			var me = $(this);
+			var name = me.attr('name');
+			var badge = me.find('.preview .J-limitNum');
+			if(badge.length > 0 ) {
+				var targetLimit = $('.accordion-group .box-element[name="' + name + '"] .J-limitNum');
+				var total = targetLimit.attr('total');
+				
+				var num = parseInt(total) - 1;
+				targetLimit.html(num);
+				
+				if(num == 0){
+					targetLimit.parent().next().hide();
+				}
+				else{
+					targetLimit.parent().next().show();
+				}
+			}
+		})
 	}
 	</script>
 </body>

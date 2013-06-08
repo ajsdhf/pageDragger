@@ -44,7 +44,8 @@ $.each(pluginList,function(cate,plugin){
 			    	});
 			    	json.view = view;
 			    	json.viewpath = turl;
-			    	json.configuration = configuration
+			    	json.configuration = configuration;
+			    	json.pathname = shortPath;
 			    	if(!pluginList[cate].list)pluginList[cate].list = [];
 			    	pluginList[cate].list.push(json);
 			    },
