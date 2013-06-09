@@ -44,25 +44,25 @@
 					</div>
 					<div class="bbSelArea">
 						<label class="checkbox inline bbLabel">
-		                  <input type="checkbox"> 例子1 
+		                  <input value="例子1" type="checkbox" onclick="setbbTableKey(this);"> 例子1 
 		                </label>
 		                <label class="checkbox inline bbLabel">
-		                  <input type="checkbox"> 例子2
+		                  <input value="例子2" type="checkbox" onclick="setbbTableKey(this);"> 例子2
 		                </label>
 		                <label class="checkbox inline bbLabel">
-		                  <input type="checkbox"> 例子3 
+		                  <input value="例子3" type="checkbox" onclick="setbbTableKey(this);"> 例子3 
 		                </label>
 		                <label class="checkbox inline bbLabel">
-		                  <input type="checkbox"> 例子4
+		                  <input value="例子4" type="checkbox" onclick="setbbTableKey(this);"> 例子4
 		                </label>
 		                <label class="checkbox inline bbLabel">
-		                  <input type="checkbox"> 例子5 
+		                  <input value="例子5" type="checkbox" onclick="setbbTableKey(this);"> 例子5 
 		                </label>
 		                <label class="checkbox inline bbLabel">
-		                  <input type="checkbox"> 例子6
+		                  <input value="例子6" type="checkbox" onclick="setbbTableKey(this);"> 例子6
 		                </label>
 					</div>
-					<div class="bbtable">
+					<div class = "bbTable" style = "margin-top: 10px;">
 						
 					</div>
 				</div>
