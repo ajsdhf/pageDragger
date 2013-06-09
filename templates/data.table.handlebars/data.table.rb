@@ -34,15 +34,11 @@
 				<li class=""><a href="#panel-150886" data-toggle="tab" >报表</a></li>
 			</ul>
 			<div class="tab-content">
-				<div class="tab-pane active zbTable" id="panel-54597">
-					<table class="table">
-						<thead>
-							
-						</thead>
-						<tbody>
-						
-						</tbody>
-					</table>
+				<div class="tab-pane active" id="panel-54597">
+					<div class="input-append">
+					  <input class="span5 bbTable" type="text" placeholder="请输入报表名称"  />
+					  <button class="btn" type="button">搜索报表</button>
+					</div>
 				</div>
 				<div class="tab-pane" id="panel-150886">
 					

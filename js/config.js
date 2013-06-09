@@ -38,5 +38,5 @@ var pluginList = {
 };
 
 var defaultSettings = {
-	ajaxCash: false;
+	ajaxCash: false
 }
