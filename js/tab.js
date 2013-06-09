@@ -6,7 +6,7 @@
 var tabModel ;
 $.ajax({
     url: 'models/tab.rb',
-    cache: false,
+    cache: defaultSettings.ajaxCash,
     async: false,
     success: function(f) {
     	tabModel = f;

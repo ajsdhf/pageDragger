@@ -36,3 +36,7 @@ var pluginList = {
 		]
 	}
 };
+
+var defaultSettings = {
+	ajaxCash: false;
+}

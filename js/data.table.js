@@ -6,7 +6,7 @@
 var zbTableModel ;
 $.ajax({
     url: 'models/table.zbTable.rb',
-    cache: false,
+    cache: defaultSettings.ajaxCash,
     async: false,
     success: function(f) {
     	zbTableModel = f;
@@ -45,6 +45,7 @@ function changeColumnNum(sender){
 			id : tId,
 			columnNum: 0,
 			rowNum: 0,
+			columnKey:[],
 			columnValue: []
 		});
 		
@@ -68,6 +69,21 @@ function changeColumnNum(sender){
 }
 
 //制定表格指标
+function setzbTableKey(sender){
+	var me = $(sender);
+	var sort = me.attr('sort');
+	
+	//获取modalid，对应tableid
+	var modalId = me.parents('.modal').first().attr('id');
+	var tId = modalId.split('-')[0];
+	var jsonId = 'zbtable-' + tId;
+	
+	var t = grobalTableDataJson[jsonId];
+	if(!t) {alert('系统错误 - code3！');return;}
+	
+	t.columnKey[sort] = me.html();
+}
+//制定表格表头
 function setzbTableValue(sender){
 	var me = $(sender);
 	var sort = me.attr('sort');
@@ -82,7 +98,6 @@ function setzbTableValue(sender){
 	
 	t.columnValue[sort] = me.html();
 	
-	//console.log(t.columnValue);
 }
 
 //修改指标表格
@@ -112,12 +127,15 @@ function getCompileJson(tId){
 		column : []
 	};
 	
+	var percent = 100/(parseInt(t.columnNum) + 1);
 	for(var i = 0 ; i < t.columnNum ; i++){
 		var column = t.columnValue[i];
+		var key = t.columnKey[i];
+		
 		if(!column) column = '';
 		
 		//sort：当前列的索引
-		var j = {name: column ,sort: i};
+		var j = {key: key,value: column ,sort: i ,percent: percent};
 		json.column.push(j);
 	}
 	

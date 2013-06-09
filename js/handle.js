@@ -1,6 +1,6 @@
 var bodyParser = [];
 var templatesPath = 'templates/';			//模版文件夹路径
-var ajaxCash = false ;						//ajax文件缓存
+var ajaxCash = defaultSettings.ajaxCash ;						//ajax文件缓存
 $.each(pluginList,function(cate,plugin){
 	var fileList = plugin.fileList;
 	$.each(fileList,function(i,item){

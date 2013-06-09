@@ -1,6 +1,0 @@
-<div class = "datepickerContent">
-	
-</div>
-
-
-
