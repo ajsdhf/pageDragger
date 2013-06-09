@@ -34,14 +34,37 @@
 				<li class=""><a href="#panel-150886" data-toggle="tab" >报表</a></li>
 			</ul>
 			<div class="tab-content">
-				<div class="tab-pane active" id="panel-54597">
-					<div class="input-append">
-					  <input class="span5 bbTable" type="text" placeholder="请输入报表名称"  />
-					  <button class="btn" type="button">搜索报表</button>
-					</div>
+				<div class="tab-pane active zbTable" id="panel-54597">
+					
 				</div>
 				<div class="tab-pane" id="panel-150886">
-					
+					<div class="input-append">
+					  <input class="span12" type="text" placeholder="请输入报表名称"  />
+					  <button class="btn" type="button">搜索报表</button>
+					</div>
+					<div class="bbSelArea">
+						<label class="checkbox inline bbLabel">
+		                  <input type="checkbox"> 例子1 
+		                </label>
+		                <label class="checkbox inline bbLabel">
+		                  <input type="checkbox"> 例子2
+		                </label>
+		                <label class="checkbox inline bbLabel">
+		                  <input type="checkbox"> 例子3 
+		                </label>
+		                <label class="checkbox inline bbLabel">
+		                  <input type="checkbox"> 例子4
+		                </label>
+		                <label class="checkbox inline bbLabel">
+		                  <input type="checkbox"> 例子5 
+		                </label>
+		                <label class="checkbox inline bbLabel">
+		                  <input type="checkbox"> 例子6
+		                </label>
+					</div>
+					<div class="bbtable">
+						
+					</div>
 				</div>
 			</div>
 		</div>

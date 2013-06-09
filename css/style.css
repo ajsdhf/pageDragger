@@ -20,6 +20,12 @@ body.edit{
 	padding: 5px 10px;
 	margin-bottom: 10px;
 }
+.bbLabel.checkbox{
+	white-space: nowrap;
+	background: #ddd;
+	padding: 5px 30px;
+	border-radius: 4px;
+}
 .edit .wrapper{
 	min-height: 100px;
 	padding-top: 30px;
