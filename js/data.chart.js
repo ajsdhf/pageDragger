@@ -100,6 +100,23 @@ function getChartCompileJson(tId){
 	return json;
 }
 
+//添加指标图表key
+function addzbChartKey(sender){
+	var me = $(sender);
+	var val = me.prev().prev().val();
+	
+	var appHtml = '<label class="checkbox inline bbLabel">\
+                     ' + val +' <button type="button" class="close" onclick = "removezxChartKey(this);">×</button> \
+                   </label>'
+	me.parent().next().append(appHtml);
+}
+
+//移除指标图表key
+function removezxChartKey(sender){
+	var me = $(sender);
+	me.parent().remove();
+}
+
 //添加报表图表的key
 function setbbChartKey(sender){
 	var me = $(sender);

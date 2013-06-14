@@ -8,7 +8,14 @@
 	</ul>
 	<div class="tab-content">
 		<div class="tab-pane active zbTable" id="panel-54597">
-			
+			<div class="input-append">
+			  <input class="span12" type="text" placeholder="请输入指标名称"  />
+			  <button class="btn" type="button">搜索指标</button>
+			  <button class="btn" type="button" onclick = "addzbChartKey(this);">添加指标</button>
+			</div>
+			<div class="zbSelArea">
+				
+			</div>
 		</div>
 		<div class="tab-pane" id="panel-150886">
 			<div class="input-append">
