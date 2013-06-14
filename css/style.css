@@ -353,4 +353,6 @@ a.language-selected { font-style: italic; font-weight: bold; }
 }
 .zbSelArea .bbLabel{
 	padding: 5px 20px;
+	margin-top: 5px;
+	margin-left: 10px;
 }

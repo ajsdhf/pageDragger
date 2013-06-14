@@ -46,7 +46,9 @@ function changeChartType(sender){
 		$.extend(json,{
 			type : type,
 			id : tId,
-			chart: [
+			zbchart: [
+			],
+			bbchart: [
 			]
 		});
 		
@@ -106,14 +108,38 @@ function addzbChartKey(sender){
 	var val = me.prev().prev().val();
 	
 	var appHtml = '<label class="checkbox inline bbLabel">\
-                     ' + val +' <button type="button" class="close" onclick = "removezxChartKey(this);">×</button> \
+                     ' + val +' <button type="button" value="'+ val +'" class="close" onclick = "removezxChartKey(this);">×</button> \
                    </label>'
+                   
+    //获取modalid，对应chartid
+	var modalId = me.parents('.modal').first().attr('id');
+	var tId = modalId.split('-')[0];
+	var jsonId = 'chart-' + tId;
+	
+	var t = grobalChartDataJson[jsonId];
+	
+	if(!t) {alert('系统错误 - code1！');return;}
+	t.zbchart[val] = val;
+	
 	me.parent().next().append(appHtml);
 }
 
 //移除指标图表key
 function removezxChartKey(sender){
 	var me = $(sender);
+	var val = me.attr('value');
+	
+	//获取modalid，对应chartid
+	var modalId = me.parents('.modal').first().attr('id');
+	var tId = modalId.split('-')[0];
+	var jsonId = 'chart-' + tId;
+	
+	var t = grobalChartDataJson[jsonId];
+	
+	if(!t) {alert('系统错误 - code1！');return;}
+	
+	delete t.zbchart[val];
+
 	me.parent().remove();
 }
 
