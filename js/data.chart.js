@@ -106,6 +106,8 @@ function getChartCompileJson(tId){
 function addzbChartKey(sender){
 	var me = $(sender);
 	var val = me.prev().prev().val();
+	val = $.trim(val);
+	if(val == "")return;
 	
 	var appHtml = '<label class="checkbox inline bbLabel">\
                      ' + val +' <button type="button" value="'+ val +'" class="close" onclick = "removezxChartKey(this);">×</button> \
