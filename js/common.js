@@ -6,6 +6,7 @@ var configurationJson = {
 	},
 	alignSel:{						//文本设置align
 		isSelect: 1,
+		name: 'align',
 		content: [
 			{name: "Default", val: ''},
 			{name: "Left",    val: 'text-left'},
@@ -15,6 +16,7 @@ var configurationJson = {
 	},
 	colorSel:{						//文本设置color
 		isSelect: 1,
+		name: 'color',
 		content: [
 			{name: "Default",    val: ''},
 			{name: "Muted",    	 val: 'muted'},
@@ -82,14 +84,17 @@ var configurationJson = {
 //通用修改绑定事件
 function commonViewChange(ev){
 	  var me = $(ev.target);
-	  var val = me.val();
+	  var val = me.attr('value');
 	  var targetDom = me.parents('.ui-draggable').first().find('.view').find('[rel = "changeClass"]');
 	  var removeClasses = '';
-	  me.find('option').each(function(i,item){
+	  me.parent().parent().find('a').each(function(i,item){
 			removeClasses += $(item).attr('value')  + " ";
 	  });
 	  targetDom.removeClass(removeClasses);
 	  targetDom.addClass(val);
+	  
+	  me.parent().parent().find('li').removeClass('active');
+	  me.parent().addClass('active');
 }
 
 //通用点击事件

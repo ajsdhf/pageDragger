@@ -71,12 +71,22 @@
 								<span class="configuration">
 									{{#each configuration}}
 										{{#if isSelect}}
-											<!---配置功能 select--->
-											<select onchange="commonViewChange(event)" >
-												{{#each content}}
-												<option value="{{val}}">{{name}}</option>
-												{{/each}}
-											</select>
+											<!---配置功能 select   
+												<select onchange="commonViewChange(event)" >
+													{{#each content}}
+													<option value="{{val}}">{{name}}</option>
+													{{/each}}
+												</select>
+											--->
+											
+											<div class="btn-group">
+								                <button class="btn dropdown-toggle btn btn-mini" data-toggle="dropdown">{{name}}<span class="caret"></span></button>
+								                <ul class="dropdown-menu">
+								                  {{#each content}}
+								                  <li><a value="{{val}}"href="javascript:void(0);" onclick="commonViewChange(event)">{{name}}</a></li>
+								                  {{/each}}
+								                </ul>
+								            </div>   
 									    {{/if}}   
 									    
 										{{#if isButton}}
