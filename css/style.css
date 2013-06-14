@@ -314,3 +314,21 @@ body.devpreview { margin-left:0px;}
 #feedbackModal input { width:515px; }
 #feedbackModal input.modal-error-field, #feedbackModal textarea.modal-error-field { border: 1px solid red; }
 a.language-selected { font-style: italic; font-weight: bold; }
+
+/*chart*/
+.chartmodal .modal-body{
+	min-height: 300px;
+}
+.chartSelBtn.btn{
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e6e6e6), to(#e6e6e6));
+}
+.chartSelBtn.btn .caret{
+	margin-top: 14px;
+	margin-left: 5px;
+}
+.dropdown-menu.chartDdm{
+	background-color: #f6f6f7;
+}
+.dropdown-menu.chartDdm img{
+	margin-right: 5px;
+}

@@ -1,15 +1,21 @@
 <table class="table table-bordered">
 	<thead>
 		<tr>
-			<th>指标：</th>
+			<th style="color: #ddd">列头－></th>
 			{{#each column}}
-				<th style = 'width: {{percent}}%' sort = "{{sort}}" class="J-bbth"></th>
+				<th style = 'width: {{percent}}%' contenteditable="true" sort = "{{sort}}" onkeyup = "setbbTableValue(this);">
+				{{#if value}}
+					{{value}}
+				{{else}}
+					col {{sort}}
+				{{/if}}
+				</th>
 			{{/each}}
 		</tr>
 		<tr>
-			<th>指标名称：</th>
+			<th style="color: #ddd">列值－></th>
 			{{#each column}}
-				<th style = 'width: {{percent}}%' contenteditable="true" sort = "{{sort}}" onkeyup = "setbbTableValue(this);">{{value}}</th>
+				<th style = 'width: {{percent}}%' sort = "{{sort}}" class="J-bbth"></th>
 			{{/each}}
 		</tr>
 	</thead>

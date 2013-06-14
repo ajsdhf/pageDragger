@@ -214,6 +214,8 @@ function bbTable(tId){
 	var tableHtml = bbTableTemplate(json);
 	
 	modal.find('.bbTable').html(tableHtml);
+	
+	modal.find('.bbLabel input').removeAttr('checked');
 }
 
 //生成模版解析json
