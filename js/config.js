@@ -6,7 +6,9 @@
 var pluginList = {							
 	grid: {
 		name: '布局' , 
-		list: [] ,
+		list: [],
+		templateList: [],
+		jsonList: [],
 		fileList:[
 			'grid.1.handlebars',
 			'grid.2.handlebars',
@@ -17,6 +19,7 @@ var pluginList = {
 	text: {
 		name: '文本', 
 		list: [],
+		templateList: [],
 		fileList:[
 			//'text.pagehead.handlebars',
 			'text.title.handlebars',
@@ -29,6 +32,7 @@ var pluginList = {
 	data: {
 		name: '数据交互', 
 		list: [],
+		templateList: [],
 		fileList:[
 			'data.table.handlebars',
 			'data.chart.handlebars',
@@ -37,6 +41,7 @@ var pluginList = {
 	}
 };
 
+//默认的参数设置
 var defaultSettings = {
 	ajaxCash: false
 }

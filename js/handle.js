@@ -22,7 +22,13 @@ $.each(pluginList,function(cate,plugin){
 			    cache: ajaxCash,
 			    async: false,
 			    success: function(f) {
-			    	view = f;
+			    	template  = Handlebars.compile(f);
+			    	
+			    	//缓存模版
+			    	if(!pluginList[cate].list)pluginList[cate].templateList = [];
+			    	pluginList[cate].templateList[shortPath] = template;
+			    	
+			    	view  = template({});
 			    },
 			    error:function(){
 				    console.log(turl + '：文件不存在');
@@ -44,8 +50,15 @@ $.each(pluginList,function(cate,plugin){
 			    	});
 			    	json.view = view;
 			    	json.viewpath = turl;
+			    	json.jsonpath = curl;
 			    	json.configuration = configuration;
 			    	json.pathname = shortPath;
+			    	
+			    	//缓存json
+			    	if(!pluginList[cate].jsonList)pluginList[cate].jsonList = [];
+			    	pluginList[cate].jsonList[shortPath] = json;
+			    	
+			    	//存入list
 			    	if(!pluginList[cate].list)pluginList[cate].list = [];
 			    	pluginList[cate].list.push(json);
 			    },
